@@ -1,0 +1,128 @@
+/* @import './base.css'; */
+
+html {
+  /* scroll-behavior: smooth; */
+  overflow-y: scroll;
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+#app {
+  /* max-width: 600px; */
+  margin: 0 auto;
+  font-weight: normal;
+  border-inline: 1px solid var(--color-border);
+}
+
+.view {
+  position: sticky;
+  top: 3rem;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+.iconButton {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.2rem 0.25rem 0 0.25rem;
+  border-radius: 50%;
+  margin-inline: 0.5rem;
+  height: 2rem;
+  transition: all 0.2s;
+  border-color: var(--color-text);
+  display: flex;
+  justify-content: center;
+  svg {
+    transition: all 0.2s;
+    filter: brightness(80);
+  }
+}
+
+.iconButton.small {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  svg {
+    transform: scale(0.75);
+  }
+}
+
+.iconButton:hover {
+  outline: 2px solid var(--color-text);
+  outline-offset: -2px;
+  svg {
+    filter: brightness(100);
+  }
+}
+
+.iconButton:active {
+  filter: brightness(0.5);
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+  height: 2.5rem;
+}
+
+form {
+  padding: 0 1rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  input {
+    margin-bottom: 1rem;
+  }
+
+  .buttonGroup {
+    display: flex;
+    margin-block-start: 1rem;
+
+    button {
+      flex: 1;
+      height: 2.5rem;
+      background-color: var(--color-button-background);
+      border: 1px solid var(--color-border);
+    }
+
+    button:last-of-type {
+      background-color: var(--color-button-background-primary);
+      color: var(--color-button-primary);
+    }
+
+    button:disabled {
+      opacity: 0.5;
+    }
+  }
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+/* @media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+} */

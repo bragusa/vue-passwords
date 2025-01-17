@@ -1,0 +1,64 @@
+<template>
+  <div class="Wait-underlay">
+    <div className="Wait-spinner"></div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'WaitSpinner',
+}
+</script>
+
+<style scoped>
+.Wait-underlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  z-index: 100;
+
+  .Wait-spinner {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 8px solid rgba(255, 255, 255, 0.75);
+    border-radius: 50%;
+    border-top-color: blue;
+    animation: spin 1s infinite;
+    -webkit-animation: spin 1s infinite;
+    margin: auto;
+    position: relative;
+  }
+
+  &.Wait-relative {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+
+    .Wait-spinner {
+      height: 50px;
+      width: 50px;
+      border-width: 5px;
+    }
+  }
+}
+
+.Wait-underlay {
+  &[data-transparent='true'] {
+    background-color: transparent;
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+</style>
